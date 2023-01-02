@@ -5,8 +5,18 @@ import axios from 'axios';
 import { FaPlay,FaRegEye} from 'react-icons/fa';
 
 
+
+
+
 function Banner() {
+
+  
+  
+
+
+
   const[movie,setMovie]=useState([])
+  const[videourl,setVideourl]=useState()
   useEffect(()=>{
   axios.get(`https://api.themoviedb.org/3/trending/all/day?api_key=${APIkey}`).then((response)=>{
    console.log(response.data.results) 
@@ -15,15 +25,23 @@ function Banner() {
     console.log(err)
   })
   },[])
+
+
+  
+  
+
+
   return (
     <div  className='banner' style={{backgroundImage:`url(${movie ? imageUrl+movie.backdrop_path : ""} )`}}>
+      
+      
   
        <div className='banner-movie'>
        
         <ul>
-            <li><h1 >{movie.title}</h1></li>
+            <li className='movie-banner'><h1 >{movie.title}</h1></li>
             
-            <li>{movie.overview}</li>
+            <li className='movie-banner'>{movie.overview}</li>
             
            
         </ul>
@@ -33,17 +51,22 @@ function Banner() {
         <button className='play'><FaPlay/>Play</button>
         <button className='more'><FaRegEye/>More Info </button>
 
+       <div  className='video'>
+     
+       </div>
        
-        
         </div>
-        <div className="banner-bottom"></div>
+             
+       
+        <div className="banner-bottom">
+       
+        </div>
        
         
        
-        
-       
+   
 
-      
+          
     </div>
   )
 }

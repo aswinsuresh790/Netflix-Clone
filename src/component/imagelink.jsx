@@ -7,3 +7,4 @@ export const TopRate=`https://api.themoviedb.org/3/movie/top_rated?api_key=${API
 export const Latest=`https://api.themoviedb.org/3/trending/all/day?api_key=${APIkey}`
 export const Popular=`https://api.themoviedb.org/3/movie/popular?api_key=${APIkey}&language=en-US&page=1`
 export const imageUrl="https://image.tmdb.org/t/p/original" 
+const video=`https://api.themoviedb.org/3/movie/505642/videos?api_key=93149a89fbcf1434eb3d6752f8fca00c&language=en-US`
